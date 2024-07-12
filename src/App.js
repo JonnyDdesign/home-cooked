@@ -18,7 +18,7 @@ const recipes = [
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Header />
       <RecipeList recipes={recipes} />
     </div>

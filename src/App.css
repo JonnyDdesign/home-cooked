@@ -8,12 +8,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+  border-bottom: 2px solid #5ADBFF;
 }
 
 .App-header h1 {
   font-size: 44px;
   color: #FFDD4A;
+}
+
+.recipe-list {
+  background-color: #094074;
 }
 
 .recipe-list {
@@ -24,7 +28,8 @@
 }
 
 .recipe {
-  border: 1px solid red;
+  border: 3px solid #FFDD4A;
+  border-radius: 20px 130px 20px 20px;
   padding: 20px;
   margin: 20px;
   width: 300px;
@@ -32,8 +37,13 @@
 }
 
 .recipe h2 {
-  border-bottom: 1px solid red;
+  color: #5ADBFF;
+  border-bottom: 2px solid #FFFFFF;
   padding-bottom: 10px;
+}
+
+.recipe h3 {
+  color: #5ADBFF;
 }
 
 .recipe ul {
@@ -42,12 +52,14 @@
 }
 
 .recipe li {
+  color: #FFFFFF;
   background-color: #3C6997;
   padding: 5px;
   margin: 5px 0;
 }
 
 .recipe p {
+  color: #FFFFFF;
   background-color: #3C6997;
   padding: 10px;
 }

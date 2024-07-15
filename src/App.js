@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Header';
 import Recipe from './Recipe';
-import RecipeList from './RecipeList';
 
 const recipes = [
   {
@@ -19,21 +18,45 @@ const recipes = [
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch('http://127.0.0.1:8000/api/recipes/')
-      .then(response => response.json())
-      .then(data => setRecipes(data))
-      .catch(error => console.log('There was an error fetching the recipes!'));
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setRecipes(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.log('There was an error fetching the recipes!', error);
+        setError(error.message);
+        setLoading(false);
+      });
   }, []);
 
   return (
     <div className="App">
       <Header />
-      <h1>Recipe List</h1>
-      {recipes.map(recipe => (
-        <Recipe key={recipe.id} recipe={recipe} />
-      ))}
+      <div className = "container">
+        <h1>Recipe List</h1>
+        {loading ? (
+          <div className="loader">Loading...</div>
+        ) : error ? (
+          <div className="error-message">There was an error fetching the recipes: {error}</div>
+        ) : (
+          <div className="recipe-list">
+            {recipes.map(recipe => (
+              <Recipe key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

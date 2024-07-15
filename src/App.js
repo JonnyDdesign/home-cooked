@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import './App.css';
 import Header from './Header';
+import Recipe from './Recipe';
 import RecipeList from './RecipeList';
 
 const recipes = [
@@ -21,19 +21,19 @@ function App() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/recipes/')
-      .then(response => {
-        setRecipes(response.data);
-      })
-      .catch(error => {
-        console.log('There was an error fetching the recipes!');
-      });
+    fetch('http://127.0.0.1:8000/api/recipes/')
+      .then(response => response.json())
+      .then(data => setRecipes(data))
+      .catch(error => console.log('There was an error fetching the recipes!'));
   }, []);
 
   return (
     <div className="App">
       <Header />
-      <RecipeList recipes={recipes} />
+      <h1>Recipe List</h1>
+      {recipes.map(recipe => (
+        <Recipe key={recipe.id} recipe={recipe} />
+      ))}
     </div>
   );
 }

@@ -1,17 +1,21 @@
 import React from 'react';
 
-function Recipe({ title, ingredients, instructions }) {
+function Recipe({ recipe }) {
   return (
-    <div className="recipe">
-      <h2>{title}</h2>
+    <div>
+      <h2>{recipe.title}</h2>
       <h3>Ingredients</h3>
       <ul>
-        {ingredients.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
+        {Array.isArray(recipe.ingredients) ? (
+          recipe.ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))
+        ) : (
+          <li>No ingredients available</li>
+        )}
       </ul>
       <h3>Instructions</h3>
-      <p>{instructions}</p>
+      <p>{recipe.instructions}</p>
     </div>
   );
 }

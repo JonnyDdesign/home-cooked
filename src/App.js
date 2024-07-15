@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './App.css';
 import Header from './Header';
 import RecipeList from './RecipeList';
+import { error } from 'console';
 
 const recipes = [
   {
@@ -17,6 +19,18 @@ const recipes = [
 ];
 
 function App() {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/api/recipes/')
+      .then(response => {
+        setRecipes(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the recipes!', error);
+      });
+  }, []);
+  
   return (
     <div className="App">
       <Header />

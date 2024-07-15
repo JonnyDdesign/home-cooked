@@ -3,7 +3,6 @@ import axios from 'axios';
 import './App.css';
 import Header from './Header';
 import RecipeList from './RecipeList';
-import { error } from 'console';
 
 const recipes = [
   {
@@ -27,10 +26,10 @@ function App() {
         setRecipes(response.data);
       })
       .catch(error => {
-        console.error('There was an error fetching the recipes!', error);
+        console.log('There was an error fetching the recipes!');
       });
   }, []);
-  
+
   return (
     <div className="App">
       <Header />

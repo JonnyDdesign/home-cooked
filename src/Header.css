@@ -1,0 +1,14 @@
+.app-header {
+    background-color: #094074;
+    color: white;
+    padding: 20px;
+    border-bottom: 2px solid #5ADBFF;
+}
+
+.app-header h1 {
+    font-family: "Great Vibes", "Georgia", "serif";
+    font-size: 60px;
+    letter-spacing: 5px;
+    color: #FFDD4A;
+    margin: 20px 0;
+  }

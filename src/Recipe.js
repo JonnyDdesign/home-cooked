@@ -10,7 +10,7 @@ function Recipe({ recipe }) {
 
   return (
     <div className={`recipe-card ${isFlipped ? 'flipped' : ''}`} onClick={handleCardClick}>
-      <div className="recipe-card">
+      <div className="recipe-card-front">
         <h2>{recipe.title}</h2>
         <h3>Ingredients</h3>
         <ul>

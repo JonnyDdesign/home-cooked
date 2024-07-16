@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Home Cooked",
+  "name": "Home Cooked Recipes",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "Home Cooked Favicon.webp",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "Home Cooked 192.webp",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "Home Cooked 512.webp",
       "type": "image/png",
       "sizes": "512x512"
     }

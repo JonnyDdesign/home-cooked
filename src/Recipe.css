@@ -36,4 +36,8 @@
   
   .recipe-card p {
     text-align: left;
+    background: #f4f4f4;
+    margin: 4px 0;
+    padding: 8px;
+    border-radius: 4px;
   }

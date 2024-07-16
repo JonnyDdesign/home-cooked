@@ -43,8 +43,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className = "container">
-        <h1>Recipe List</h1>
+      <div className="container">
+        <h1>Click a Recipe Below for an Amazing Home Cooked Meal:</h1>
         {loading ? (
           <div className="loader">Loading...</div>
         ) : error ? (

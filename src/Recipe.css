@@ -2,12 +2,12 @@
     width: 300px;
     height: auto;
     perspective: 1000px;
-    border: 1px solid #FFDD4A;
+    margin: 16px;
+    /*border: 1px solid #FFDD4A;
     border-radius: 10px;
     padding: 16px;
-    margin: 16px;
     box-shadow: 0 2px 5px white;
-    transition: transform 0.2s;
+    transition: transform 0.2s;*/
     cursor: pointer;
 }
 

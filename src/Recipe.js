@@ -10,19 +10,21 @@ function Recipe({ title, ingredients, instructions, image }) {
 
   return (
     <div className={`recipe-card ${isFlipped ? 'flipped' : ''}`} onClick={handleCardClick}>
-      <div className="recipe-card-front">
-        <h2>{title}</h2>
-        <h3>Ingredients</h3>
-        <ul>
-          {ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))}
-        </ul>
-        <h3>Instructions</h3>
-        <p>{instructions}</p>
-      </div>
-      <div className="recipe-card-back">
-        <img src={image} alt={title} />
+      <div className="recipe-card-inner">
+        <div className="recipe-card-front">
+          <img src={image} alt={title} className="recipe-image" />
+          <h2>{title}</h2>
+        </div>
+        <div className="recipe-card-back">
+          <h3>Ingredients</h3>
+          <ul>
+            {ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
+          <h3>Instructions</h3>
+          <p>{instructions}</p>
+        </div>
       </div>
     </div>
   );

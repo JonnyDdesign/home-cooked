@@ -1,43 +1,65 @@
 .recipe-card {
     width: 400px;
+    height: 400px;
     perspective: 1000px;
-    margin: 16px;
-    padding: 40px;
+    margin: 16px auto;
+    padding: 20px;
     cursor: pointer;
 }
 
-.recipe-card-front,
-.recipe-card-back {
+.recipe-card-inner {
+    position: relative;
     width: 100%;
-    backface-visibility: hidden;
+    height: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
 
-.recipe-card-front {
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 0 15px 5px #FFDD4A;
+.recipe-card-front,
+.recipe-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     border-radius: 20px;
+    box-shadow: 0 0 15px 5px #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: height 0.6s;
+}
+
+.recipe-card-front {
+    height: 400px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .recipe-card-back {
-    position: absolute;
-    top: 0;
-    left: 0;
+    min-height: 400px;
     background-color: #FFDD4A;
-    padding: 5px;
-    box-shadow: 0 0 10px #000000;
-    border-radius: 10px;
     transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-.recipe-card.flipped .recipe-card-front {
+.recipe-card.flipped .recipe-card-inner {
     transform: rotateY(180deg);
+    height: auto;
 }
 
 .recipe-card.flipped .recipe-card-back {
-    transform: rotateY(0deg);
+    height: auto;
 }
 
 h2 {
@@ -45,10 +67,12 @@ h2 {
     color: #3C6997;
     text-align: center;
     text-decoration: underline;
+    margin-bottom: 10px;
 }
 
 h3 {
     color: #3C6997;
+    margin-bottom: 10px;
 }
   
 ul {
@@ -60,9 +84,17 @@ li {
     margin: 5px 0;
     padding: 10px;
     border-radius: 4px;
+    background-color: green;
+}
+
+p {
+    overflow-y: auto;
+    max-height: 200px;
 }
 
 img {
     width: 100%;
+    max-height: 200px;
+    object-fit: cover;
     border-radius: 10px;
 }

@@ -22,7 +22,7 @@ function Recipe({ title, ingredients, instructions, image }) {
         <p>{instructions}</p>
       </div>
       <div className="recipe-card-back">
-        <img src={image} alt={`${title}`} />
+        <img src={image} alt={title} />
       </div>
     </div>
   );

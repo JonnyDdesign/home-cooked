@@ -7,30 +7,29 @@
   font-display: swap;
 }
 
-.App {
-  text-align: center;
-  background-image: linear-gradient(180deg, #094074, #3C6997);
-  /*background-color: #094074;*/
+body {
   font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(180deg, #094074, #3C6997);
+  background-color: #094074;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.container h1 {
+h1 {
+  text-align: center;
   color: #FFDD4A;
 }
 
-.loader {
-  font-size: 24px;
-  color: #5ADBFF;
-}
-
+.loader,
 .error-message {
-  font-size: 18px;
+  text-align: center;
+  margin-top: 30px;
   color: #5ADBFF;
 }
 
@@ -38,4 +37,5 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 20px;
 }

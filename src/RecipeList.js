@@ -10,6 +10,7 @@ function RecipeList ({ recipes }) {
                     title={recipe.title}
                     ingredients={recipe.ingredients}
                     instructions={recipe.instructions}
+                    image={recipe.image}
                 />
             ))}
         </div>

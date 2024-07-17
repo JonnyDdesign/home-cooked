@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Header';
-import Recipe from './Recipe';
+import RecipeList from './RecipeList';
 
 /*const recipes = [
   {
@@ -54,11 +54,7 @@ function App() {
         ) : error ? (
           <div className="error-message">There was an error fetching the recipes: {error}</div>
         ) : (
-          <div className="recipe-list">
-            {recipes.map(recipe => (
-              <Recipe key={recipe.id} recipe={recipe} />
-            ))}
-          </div>
+          <RecipeList recipes={recipes} />
         )}
       </div>
     </div>

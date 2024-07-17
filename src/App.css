@@ -1,16 +1,15 @@
 @font-face {
-  font-family: 'Great Vibes';
-  src: url('./assets/fonts/GreatVibes-Regular.woff2') format('woff2'),
-       url('./assets/fonts/GreatVibes-Regular.woff') format('woff');
+  font-family: 'Petrona';
+  src: url('./assets/fonts/Petrona-Regular.woff2') format('woff2'),
+       url('./assets/fonts/Petrona-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: linear-gradient(180deg, #094074, #3C6997);
-  background-color: #094074;
+  font-family: "Arial", "Helvetica", "sans-serif";
+  background-image: linear-gradient(180deg, #094074, #5ADBFF);
   margin: 0;
   padding: 0;
 }
@@ -22,8 +21,10 @@ body {
 }
 
 h1 {
+  font-family: "Petrona", "Georgia", "serif";
   text-align: center;
   color: #FFDD4A;
+  font-size: 2rem;
 }
 
 .loader,

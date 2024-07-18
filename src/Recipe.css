@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Caveat';
+    src: url('./assets/fonts/Caveat-Regular.woff2') format('woff2'),
+         url('./assets/fonts/Caveat-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 .recipe-card {
     width: 500px;
     height: 500px;
@@ -47,6 +56,8 @@ h2 {
 }
 
 h3 {
+    font-family: "Caveat", "Georgia", "serif";
+    font-size: 2rem;
     color: #3C6997;
     margin: 0;
     
